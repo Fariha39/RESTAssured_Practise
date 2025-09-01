@@ -1,4 +1,5 @@
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +15,10 @@ public class RESTAssured {
                         "    \"password\":\"1234\"\n" +
                         "}")
                 .when().post("/user/login");
-        System.out.println(res.asString());
+       // System.out.println(res.asString());
+        JsonPath jsonObj =res.jsonPath();
+        String token =jsonObj.get("token");
+        System.out.println(token);
 
 
     }
