@@ -1,8 +1,20 @@
 import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.junit.jupiter.api.Test;
+
+import static io.restassured.RestAssured.given;
 
 public class RESTAssured {
+    @Test
     public void doLogin(){
-        RestAssured.baseURI="http://dmoney.roadtocareer.net";
+        RestAssured.baseURI="https://dmoney.roadtocareer.net";
+       Response res= given().contentType("application/json")
+                .body("{\n" +
+                        "    \"email\":\"Admin@roadtocaReer.net\",\n" +
+                        "    \"password\":\"1234\"\n" +
+                        "}")
+                .when().post("/user/login");
+        System.out.println(res.asString());
 
 
     }
