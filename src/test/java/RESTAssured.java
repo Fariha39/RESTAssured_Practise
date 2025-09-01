@@ -1,13 +1,14 @@
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.apache.commons.configuration.ConfigurationException;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
 public class RESTAssured {
     @Test
-    public void doLogin(){
+    public void doLogin() throws ConfigurationException {
         RestAssured.baseURI="https://dmoney.roadtocareer.net";
        Response res= given().contentType("application/json")
                 .body("{\n" +
@@ -19,7 +20,7 @@ public class RESTAssured {
         JsonPath jsonObj =res.jsonPath();
         String token =jsonObj.get("token");
         System.out.println(token);
-
+ utils.setEnvVar("token",token);
 
     }
 }
