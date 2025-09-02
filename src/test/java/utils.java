@@ -5,7 +5,7 @@ public class utils {
 
     public static void setEnvVar(String key,String value) throws ConfigurationException {
 
-        PropertiesConfiguration config = new PropertiesConfiguration("./src/test/resources/config");
+        PropertiesConfiguration config = new PropertiesConfiguration("./src/test/resources/config.properties");
         config.setProperty(key,value);
         config.save();
 
