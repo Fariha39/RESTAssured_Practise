@@ -10,13 +10,10 @@ public class userController {
     public  userController(Properties prop){
         this.prop=prop;
     }
-    public Response doLogin(){
+    public Response doLogin(userModel userModel){
         RestAssured.baseURI=prop.getProperty("baseurl");
        return given().contentType("application/json")
-                .body("{\n" +
-                        "    \"email\":\"admin@roadtocareer.net\",\n" +
-                        "    \"password\":\"1234\"\n" +
-                        "}")
+                .body(userModel)
                 .when().post("/user/login");
     }
 }

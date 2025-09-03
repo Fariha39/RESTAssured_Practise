@@ -15,6 +15,7 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured:5.5.5'
     implementation 'commons-configuration:commons-configuration:1.10'
     testImplementation 'org.testng:testng:7.11.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.0'
 }
 
 test {
