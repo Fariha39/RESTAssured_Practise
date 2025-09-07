@@ -3,9 +3,9 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.commons.configuration.ConfigurationException;
 import org.junit.jupiter.api.Test;
+import utils.Utils;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -33,7 +33,7 @@ public class RESTAssured {
         JsonPath jsonObj =res.jsonPath();
         String token =jsonObj.get("token");
         System.out.println(token);
- utils.setEnvVar("token",token);
+ Utils.setEnvVar("token",token);
 
     }
 @Test

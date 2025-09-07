@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="dmoney RESTAssured integration testing">
+    <test name="automation on dmoney ">
+        <classes>
+            <class name="testRunner.userTestRunner">
+
+            </class>
+        </classes>
+    </test>
+</suite>
